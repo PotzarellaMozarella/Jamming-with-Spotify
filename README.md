@@ -1,4 +1,4 @@
-# Jammming: Create a Playlist App With the Spotify API (Part One)
+# Jammming: Create a Playlist App With the Spotify API 
 
 Welcome to the **Jammming** project! In this project, you will build a React web application that allows users to search the Spotify library, create a custom playlist, and save it to their Spotify account.
 
