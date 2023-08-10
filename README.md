@@ -10,6 +10,12 @@ Jammming is a web application built using React, JavaScript, and the Spotify API
 
 ![Screenshot](public/Jammming.png)
 
+## Technologies Used
+
+- React
+- JavaScript
+- Spotify API
+
 ## Project Structure
 
 The project is structured as follows:
@@ -50,11 +56,6 @@ To run the Jammming app on your local machine, follow these steps:
 
 - **Save Playlist:** Users can save their custom playlist to their Spotify account.
 
-## Technologies Used
-
-- React
-- JavaScript
-- Spotify API
 
 ## Usage
 
