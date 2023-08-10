@@ -12,9 +12,9 @@ Jammming is a web application built using React, JavaScript, and the Spotify API
 
 The project is structured as follows:
 
-- `spotify.js`: This module handles communication with the Spotify API. It provides methods to retrieve access tokens, search for tracks, and save playlists to a user's Spotify account.
+- `util/spotify.js`: This module handles communication with the Spotify API. It provides methods to retrieve access tokens, search for tracks, and save playlists to a user's Spotify account.
 
-- `App.js`: This is the main component of the Jammming app. It manages the state of the application, including search results, playlist name, and playlist tracks. It also handles user interactions such as adding/removing tracks from the playlist and saving the playlist.
+- `components/App/App.js`: This is the main component of the Jammming app. It manages the state of the application, including search results, playlist name, and playlist tracks. It also handles user interactions such as adding/removing tracks from the playlist and saving the playlist.
 
 ## Getting Started
 
