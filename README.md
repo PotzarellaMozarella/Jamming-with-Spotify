@@ -2,7 +2,7 @@
 
 Welcome to the **Jammming** project! In this project, you will build a React web application that allows users to search the Spotify library, create a custom playlist, and save it to their Spotify account.
 
-You can check it out on this link: [Jammming](https://black-jack-game-alpha.vercel.app/) 
+You can check it out on this link: [Jammming](https://jamming-with-spotify-10gjn1xyr-potzarellamozarella.vercel.app/) 
 
 ## Overview
 
