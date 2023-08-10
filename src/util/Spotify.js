@@ -1,40 +1,35 @@
 const clientID= '46f90462bc1347eaa9b049502a9734c9';
-const redirectURI = 'https://your-vercel-app.vercel.app/callback';
 
 let accessToken;
 
 
 const Spotify = {
 //gets Access token from spotify 
-  getAccessToken() {
-        if (accessToken) {
-        return accessToken;
-        }
+   getAccessToken() {
+    if (accessToken) {
+      return accessToken;
+    }
 
-        //check for access token match
-        const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-        const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
+    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
+    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
-        if (accessTokenMatch && expiresInMatch) {
-        accessToken = accessTokenMatch[1];
-        const expiresIn = Number(expiresInMatch[1]);
+    if (accessTokenMatch && expiresInMatch) {
+      accessToken = accessTokenMatch[1];
+      const expiresIn = Number(expiresInMatch[1]);
 
-        //this clears the parameters, allowing us to grab a new access token when old expires
-        window.setTimeout(() => (accessToken = ""), expiresIn * 1000);
+      // Set a timeout to clear the access token after it expires
+      window.setTimeout(() => (accessToken = ''), expiresIn * 1000);
 
-        //this clears the parameters from the URL, so the app doesn’t try grabbing the access token after it has expired
-        window.history.pushState("Access Token", null, "/");
-        
-        return accessToken;
-        } 
-        //if the access token variable is empty and is not in the URL uses implicit grant flow to get one
-        else {
-            const accessUrl= `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
-            window.location = accessUrl;
-        }
-       
-        
-    },
+      // Clear the parameters from the URL
+      window.history.pushState('Access Token', null, '/');
+
+      return accessToken;
+    } else {
+      // Modify the accessUrl to include the implicit grant flow response_type
+      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public`;
+      window.location = accessUrl;
+    }
+  },
 
     // triggers a fetch request from the Spotify app to get the tracks and send them back to App.js as searchResults
     async search(term) {
