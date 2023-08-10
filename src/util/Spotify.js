@@ -5,7 +5,7 @@ let accessToken;
 
 const Spotify = {
 //gets Access token from spotify 
-   getAccessToken() {
+     getAccessToken() {
     if (accessToken) {
       return accessToken;
     }
@@ -26,7 +26,7 @@ const Spotify = {
       return accessToken;
     } else {
       // Modify the accessUrl to include the implicit grant flow response_type
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public`;
+      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${encodeURIComponent(window.location.href)}`;
       window.location = accessUrl;
     }
   },
