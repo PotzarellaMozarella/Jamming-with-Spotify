@@ -8,7 +8,7 @@ You can check it out on this link: [Jammming](https://jamming-with-spotify-10gjn
 
 Jammming is a web application built using React, JavaScript, and the Spotify API. Users can search for songs in the Spotify library, add them to a custom playlist, and then save the playlist to their own Spotify account. The app utilizes React components, state management, and API requests to provide a seamless and interactive experience.
 
-![Screenshot](public/public/Jammming.png)
+![Screenshot](public/Jammming.png)
 
 ## Project Structure
 
